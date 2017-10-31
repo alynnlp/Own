@@ -1,0 +1,25 @@
+<header>
+  <p class="banner">OWN</p>
+</header>
+<div class="homepage-hero-module">
+  <div class="video-container">
+      <div class="filter"></div>
+      <video autoplay loop class="fillWidth">
+          <source src="../../oculus/mp4/oculus.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="../../oculus/webm/oculus.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+      <div class="poster hidden">
+          <img src="" alt="">
+      </div>
+  </div>
+</div>
+
+<div class="overlay">
+  <center>
+  <p>Where Realtors and Homebuyers meet...</p>
+  <button class="login">Login</button>
+  <button class="register">Register</button>
+  </center>
+</div>
+
+<%= react_component("HelloWorld", props: @hello_world_props, prerender: false) %>
