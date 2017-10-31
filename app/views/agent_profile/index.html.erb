@@ -1,0 +1,10 @@
+<div>
+  <form>
+    First name:<br>
+    <input type="text" name="firstname"><br>
+    Last name:<br>
+    <input type="text" name="lastname">
+  </form>
+<div>
+
+<%= react_component("AgentInfo", props: @agent_profile_props, prerender: false) %>
