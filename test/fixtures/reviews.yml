@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyString
+  rating: MyString
+  user: one
+  agent: one
+
+two:
+  comment: MyString
+  rating: MyString
+  user: two
+  agent: two

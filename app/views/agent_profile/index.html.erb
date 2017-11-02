@@ -1,10 +1,46 @@
-<div>
-  <form>
-    First name:<br>
-    <input type="text" name="firstname"><br>
-    Last name:<br>
-    <input type="text" name="lastname">
-  </form>
-<div>
+<header>
+  <p class="agentbanner">
+    OWN
+  </p>
+</header>
 
-<%= react_component("AgentInfo", props: @agent_profile_props, prerender: false) %>
+<div>
+  <button>Congratulations! You have 1 new message!</button>
+</div>
+
+<%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
+
+<div>
+  <img class="agentprofile" src="../../images/testdisplay.jpg" alt="Profile Picture"></img>
+  <p>UPDATE INFO</p>
+  <p>Name: Mr. Agent</p>
+  <p>Location: Downtown Toronto, Etobicoke</p>
+  <p>Specialty: Condominium</p>
+  <p>Biography: I am the ONLY AGENT who can find you the PERFECT home! :)</p>
+</div>
+
+<div>
+  <h3>Average Rating: 3.5</h3>
+  <img>Animation of stars</img>
+</div>
+
+<div>
+  <h3>Comment</h3>
+  <ul>
+    <li>
+      <p>User 1:<p>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
+    </li>
+    <li>
+      <p>User 2:<p>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
+    </li>
+    <li>
+      <p>User 3:<p>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
+    </li>
+  </ul>
+</div>
