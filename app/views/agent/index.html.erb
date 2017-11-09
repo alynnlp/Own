@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost:3000/home">Real World</a>
+  <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
   <ul class="nav nav-pills" role="tablist">
     <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/agent_profile/{}">Profile</a></li>
     <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/agentrequest">Messages <span class="badge">3</span></a></li>
@@ -27,9 +27,11 @@
         <% @agents.each do |agent| %>
           <ul>
             <p>
-              <h4><%= agent.name %></h4>
+              <h4><%= agent.name %> </h4>
               Specialty: <%= agent.specialty %>
-              <%= link_to "Show", agent %>
+              <span class="requestlink">
+                <%= link_to "Request", agent %>
+              </span>
             </p>
           </ul>
         <% end %>

@@ -3,11 +3,12 @@ class AgentController < ApplicationController
 
   def index
     @agents = Agent.all
+    @reviews = Review.all
   end
 
   def show
     @agents = Agent.find(params[:id])
-    
+
   end
 
   def new
