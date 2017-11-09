@@ -1,0 +1,36 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/agent_profile/{}">Profile</a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/agentrequest">Messages <span class="badge">3</span></a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/home">Log out</a></li>
+  </ul>
+</nav>
+<div class="listofagents">
+  <img class="bigdisplay" src="../images/testdisplay.jpg" alt="Profile Picture"></img>
+  <div class="agentinfo">
+    <p class="agentname">
+      AGENT NAME
+    </p>
+    <p>
+      Rating: 3.5<br>
+      Specialized Location: Downtown Toronto<br>
+      Specialty: Townhouse<br>
+    </p>
+    <p>Biography:<br>
+      25 years of experience in selling townhouse in downtown Toronto!
+
+    </p>
+  </div>
+
+  <div class="request">
+    <h3 class="requesttitle">Request Agent</h3>
+      <%= form_for Message.new, url: agentrequest_index_path do |f| %>
+        <p>
+          <%= f.label :message%><br>
+          <%= f.text_area :content %>
+        </p>
+        <%= f.submit %>
+      <% end %>
+  </div>
+</div>

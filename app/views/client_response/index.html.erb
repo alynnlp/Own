@@ -1,1 +1,29 @@
+<h2>Client Requirement</h2>
+<div class="clientinfo">
+  <p> </p>
+</div>
+<div>
+  <%= @response.each do |r| %>
+    <div><%= r.text %></div>
+  <% end %>
+</div>
+<div class="clientmessage">
+  <p>
+    <strong>Title:</strong>
+    <%= @request.title %>
+  </p>
+  <p>
+    <strong>Message:</strong>
+    <%= @request.text %>
+  </p>
+</div>
+
+<h3>Notes to Client</h3>
+<div class="notestoclient">
+    <p> </p>
+</div>
+<button>Accept</button>
+<button>Reject</button>
+
+
 <%= react_component("ClientResponse", props: @client_response_props, prerender: false) %>

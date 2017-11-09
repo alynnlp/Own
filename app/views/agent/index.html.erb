@@ -1,0 +1,40 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000/home">Real World</a>
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/agent_profile/{}">Profile</a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/agentrequest">Messages <span class="badge">3</span></a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/home">Log out</a></li>
+  </ul>
+</nav>
+<div class="sorting">
+  <div class="btn-group btn-group-justified active" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Most Reviewed</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Top Rated</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Specialty</button>
+    </div>
+  </div>
+</div>
+<div class="listofagents">
+  <center><h4>A G E N T S</h4></center>
+  <div class="scrollbar scrollbar-morpheus-den">
+    <div class="force-overflow">
+      <p>
+        <% @agents.each do |agent| %>
+          <ul>
+            <p>
+              <h4><%= agent.name %></h4>
+              Specialty: <%= agent.specialty %>
+              <%= link_to "Show", agent %>
+            </p>
+          </ul>
+        <% end %>
+        <%= react_component("Agentlist", props: @agent_props, prerender: false) %>
+      </p>
+    </div>
+  </div>
+</div>

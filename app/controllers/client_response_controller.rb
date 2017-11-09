@@ -5,6 +5,8 @@ class ClientResponseController < ApplicationController
     @client_response_props = {
       name: "first client"
     }
+
+    @response = Response.all
   end
 
   def create

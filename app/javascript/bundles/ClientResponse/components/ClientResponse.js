@@ -10,11 +10,8 @@ export default class ClientResponse extends React.Component {
   render(){
     return (
       <div>
-        <h2>Client Requirement</h2>
-        <h3>Notes to Client</h3>
-        <input type='text'></input>
-        <button>Accept</button>
-        <button>Reject</button>
+        <p>Accepted Client</p>
+        <p>Rejected Client</p>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export default class AgentList extends React.Component {
+export default class AgentProfile extends React.Component {
 
   /**
   * @param props - this component recieves props from Views
@@ -10,10 +10,7 @@ export default class AgentList extends React.Component {
   render(){
     return (
       <div>
-        <h2>SearchBar</h2>
-        <p>Popularity</p>
-        <p>Specialty</p>
-        <p>Location</p>
+        <p>Message Sent!</p>
       </div>
     )
   }
