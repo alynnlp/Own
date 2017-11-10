@@ -3,10 +3,12 @@ class AgentController < ApplicationController
 
   def index
     @agents = Agent.all
+    @agentmessage = Message.where(user_id: params[:id])
   end
 
   def show
     @agent = Agent.find(params[:id])
+    @agentmessage = Message.where(user_id: params[:id])
 
 
     # @agentname = Agent.find(params[:id]).name

@@ -7,6 +7,12 @@ class ClientProfileController < ApplicationController
     }
   end
 
+  def show
+    @agentmessage = Message.where(user_id: params[:id])
+    @agentreview = Review.where(user_id: params[:id])
+    @user = User.find(params[:id])
+  end
+
   def create
   end
 
@@ -14,10 +20,6 @@ class ClientProfileController < ApplicationController
   end
 
   def edit
-  end
-
-  def show
-  
   end
 
   def update
