@@ -44,10 +44,11 @@
       <div class="force-overflow">
         <% @agentreview.each do |review| %>
           <ul>
-            <p><%= review.agent.name %>
-              <span><%= review.rating %> </span>
+            <p><%= review.agent.name %><br>
+            <p>
+              <b>Rating: </b><%= review.rating %><br>
+              <%= review.comment %>
             </p>
-            <p><%= review.comment %></p>
           </ul>
         <% end %>
       </div>
