@@ -8,24 +8,23 @@
 </nav>
 <div class="listofagents">
   <img class="bigdisplay" src="../images/testdisplay.jpg" alt="Profile Picture"></img>
-  <div class="agentinfo">
-    <p class="agentname">
-      AGENT NAME
-    </p>
-    <p>
-      Rating: 3.5<br>
-      Specialized Location: Downtown Toronto<br>
-      Specialty: Townhouse<br>
-    </p>
-    <p>Biography:<br>
-      25 years of experience in selling townhouse in downtown Toronto!
-
-    </p>
+  <p> <span class="agentname"><%= @agent.name %></span>
+  <b>Rating:</b> <%= @agent.reviews.first.rating %><i class="fa fa-star"></i></p>
+  <div class="scrollbar scrollbar-morpheus-den agentinfo">
+    <div class="force-overflow">
+      <p>
+        <b>Specialized Location:</b> <%= @agent.location %><br>
+        <b>Specialty:</b> <%= @agent.specialty %><br>
+      </p>
+      <p><b>Biography:</b><br>
+        <%= @agent.bio %>
+      </p>
+    </div>
   </div>
 
   <div class="request">
-    <h3 class="requesttitle">Request Agent</h3>
-      <%= form_for Message.new, url: agentrequest_index_path do |f| %>
+    <h5 class="requesttitle">Request Agent</h5>
+      <%= form_for Message.new, url: "/agent/#{@agent.id}/agentrequest" do |f| %>
         <p>
           <%= f.label :message%><br>
           <%= f.text_area :content %>

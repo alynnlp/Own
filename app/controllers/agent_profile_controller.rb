@@ -6,12 +6,12 @@ class AgentProfileController < ApplicationController
       name: "Aileen Pang"
     }
   end
-  
+
   def show
     @agent = Agent.find(params[:id])
   end
 
-  def create
+  def create  
   end
 
   def new
@@ -19,8 +19,6 @@ class AgentProfileController < ApplicationController
 
   def edit
   end
-
-
 
   def update
   end

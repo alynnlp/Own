@@ -3,12 +3,18 @@ class AgentController < ApplicationController
 
   def index
     @agents = Agent.all
-    @reviews = Review.all
   end
 
   def show
-    @agents = Agent.find(params[:id])
+    @agent = Agent.find(params[:id])
 
+
+    # @agentname = Agent.find(params[:id]).name
+    # @agentbio = Agent.find(params[:id]).bio
+    # @agentspecialty = Agent.find(params[:id]).specialty
+    # @agentlocation = Agent.find(params[:id]).location
+
+    # @agentrating = Review.where(agent_id: params[:id]).rating
   end
 
   def new
@@ -18,10 +24,14 @@ class AgentController < ApplicationController
   end
 
   def create
-     @request = Message.new(params[agentrequest_params])
+    @agent = Agent.find(params[:id])
+    @request = Message.new(params[agentrequest_params])
 
-     @request.save
-     redirect_to agentrequest_index_path(@request.id)
+    if @request.save
+      redirect_to action: :index
+    else
+      render 'show'
+    end
   end
 
   def update
@@ -34,4 +44,5 @@ class AgentController < ApplicationController
     def agentrequest_params
       params.require(:message).permit(:content)
     end
+
 end
