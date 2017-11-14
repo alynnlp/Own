@@ -17,9 +17,12 @@
 <div class="overlay">
   <center>
     <p>Where Realtors and Homebuyers meet...</p>
-    <button class="login"><a class="login" href="http://localhost:3000/agent">Login</button></a>
-    <button class="register"><a class="register" href="http://localhost:3000/agent">Register</button></a>
+    <div class="loginoption">
+      <div class="homeroot">
+        <%= react_component("HelloWorld", props: @hello_world_props, prerender: false) %>
+        <a class="agentlogin"href="http://localhost:3000/agentlogin">i am an agent . </a>
+
+      </div>
+    </div>
   </center>
 </div>
-
-<%= react_component("HelloWorld", props: @hello_world_props, prerender: false) %>

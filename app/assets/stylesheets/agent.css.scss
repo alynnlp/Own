@@ -21,6 +21,11 @@ div.request {
   justify-content: space-between;
 }
 
+p.listname {
+  wdith: 70%;
+  float: right;
+}
+
 a {
   margin: 10px;
 }
@@ -41,7 +46,6 @@ a.navbar-brand {
 
 button.btn.btn-default {
   opacity: 0.7;
-  padding: 10px 100px ;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
 }
@@ -63,6 +67,7 @@ button.btn.btn-default {
 
 div.sorting {
  text-align: center;
+ width: 100%;
 }
 
 .requesttitle {

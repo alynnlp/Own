@@ -3,6 +3,7 @@ class AgentController < ApplicationController
 
   def index
     @agents = Agent.all
+    @agent_props = Agent.name
     @agentmessage = Message.where(user_id: params[:id])
   end
 

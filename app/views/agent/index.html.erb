@@ -23,9 +23,10 @@
   <div class="scrollbar scrollbar-morpheus-den">
     <div class="force-overflow">
       <p>
+        <%= react_component("Agentlist", props: @agent_props, prerender: false) %>
         <% @agents.each do |agent| %>
           <ul>
-            <p>
+            <p class="listname">
               <h4><%= agent.name %> </h4>
               Specialty: <%= agent.specialty %>
               <span class="requestlink">
@@ -34,7 +35,6 @@
             </p>
           </ul>
         <% end %>
-        <%= react_component("Agentlist", props: @agent_props, prerender: false) %>
       </p>
     </div>
   </div>

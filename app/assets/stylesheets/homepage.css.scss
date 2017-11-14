@@ -65,3 +65,61 @@ p.banner {
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
 }
+
+.loginpage {
+  color: grey;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  opacity: 0.95;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  top:30%;
+  left:25%;
+  z-index:1;
+  width: 50%;
+}
+
+.registerpage {
+  color: grey;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  opacity: 0.95;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  top:30%;
+  left:25%;
+  z-index:1;
+  width: 50%;
+}
+
+.cancel {
+  float: right;
+}
+.cancel:hover {
+  border-bottom: 1px solid grey;
+}
+
+.loginoption {
+
+}
+
+.agentlogin {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background: lightgrey;
+  border-radius: 2px;
+  padding: 0 20px;
+  opacity: 0.8;
+  color: black;
+}
+
+a.agentlogin:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: black;
+  background-color: white;
+}
