@@ -14,13 +14,15 @@ export default class AgentLogin extends React.Component {
       showRegisterAgent: false,
     }
     this.handleNewAgentClick = this.handleNewAgentClick.bind(this);
+    this.closeForm = this.closeForm.bind(this);
   }
   render(){
     return(
       <div >
         <a className="NewAgentClick" onClick={this.handleNewAgentClick}>
                                   New Agent</a>
-        {this.state.showRegisterAgent ? <RegisterNewAgent /> : null}
+        {this.state.showRegisterAgent ? <RegisterNewAgent getNewAgent = {this.getNewAgent}
+                                                    closeForm = {this.closeForm} /> : null}
       </div>
     )
   }

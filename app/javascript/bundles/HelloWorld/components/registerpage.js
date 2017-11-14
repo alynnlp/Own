@@ -15,8 +15,8 @@ export default class RegisterPage extends React.Component {
           <p>location:
             <input className="reglocation"></input>
           </p>
-          <p>budget: <input className="regbudget"></input>,000</p>
-          <p>size: <input className="regsize"></input>square ft</p>
+          <p>budget: <input className="regbudget"></input> ,000</p>
+          <p>size: <input className="regsize"></input> square ft</p>
           <p>age: <input className="regage"></input></p>
           <p>address: <input className="regadd"></input></p>
           <p>occupation: <input className="regoccupation"></input></p>

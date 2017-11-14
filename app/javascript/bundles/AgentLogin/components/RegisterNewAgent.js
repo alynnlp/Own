@@ -8,7 +8,7 @@ export default class RegisterNewAgent extends React.Component {
       <div className="registerpage">
         <h3>REGISTER<a className="cancel" onClick={this.props.closeForm}>x</a></h3>
         <hr />
-        <form className="registerform" onSubmit={this.props.getNewAgent}>
+        <form id="userregisterform"className="registerform" onSubmit={this.props.getNewAgent}>
           <p>name: <input placeholder="Full name" className="agename"></input></p>
           <p>email: <input placeholder="example@gmail.com" className="ageemail"></input></p>
           <p>password: <input className="agepw"></input></p>
@@ -23,12 +23,11 @@ export default class RegisterNewAgent extends React.Component {
               <li>Duplex/Triplex</li>
             </span>
           </p>
-          <p>
-            profile pic: <input type="url" className="ageimg" placeholder="http://"></input>
-            <input type="submit">Register</input>
-          </p>
+          <p>profile pic: <input type="url" className="ageimg" placeholder="http://"></input></p>
+          <p><button type="submit">Register</button></p>
         </form>
       </div>
     )
   }
+
 }
