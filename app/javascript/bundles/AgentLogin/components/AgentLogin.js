@@ -18,11 +18,6 @@ export default class AgentLogin extends React.Component {
   render(){
     return(
       <div >
-        <h2>Login</h2>
-        <form id="agentlogin" className="agentlogin">
-          <p>email:<input></input></p>
-          <p>password:<input></input></p>
-        </form>
         <a className="NewAgentClick" onClick={this.handleNewAgentClick}>
                                   New Agent</a>
         {this.state.showRegisterAgent ? <RegisterNewAgent /> : null}
@@ -31,15 +26,15 @@ export default class AgentLogin extends React.Component {
   }
 
   handleNewAgentClick() {
-    this.setState = {
+    this.setState({
       showRegisterAgent: true,
-    }
+    });
   }
 
   closeForm(){
-    this.setState={
+    this.setState({
       showRegisterAgent: false,
-    }
+    });
   }
 
   getNewAgent(){

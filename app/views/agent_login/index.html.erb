@@ -1,3 +1,15 @@
-<h2>Login as Agent</h2>
+<header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:3000/home">Real World</a>
+  </nav>
+</header>
 
-<%= react_component("AgentLogin", props: @agent_props, prerender: false) %>
+<div class="AgentLoginPage">
+  <p>Let's us help you start growing your business...</p>
+  <h3>Login</h3>
+  <form id="agentlogin" className="agentlogin">
+    <p>email:<input></input></p>
+    <p>password:<input></input></p>
+  </form>
+  <%= react_component("AgentLogin", props: @agent_props, prerender: false) %>
+</div>

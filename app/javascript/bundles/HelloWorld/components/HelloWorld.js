@@ -19,7 +19,6 @@ export default class HelloWorld extends React.Component {
     this.state = {
       showLogin: false,
       showRegister: false,
-      visible: false,
     }
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleRegisterClick = this.handleRegisterClick.bind(this);

@@ -14,14 +14,14 @@ export default class RegisterNewAgent extends React.Component {
           <p>password: <input className="agepw"></input></p>
           <p>biography: <input className="agebio"></input></p>
           <p>specialty:
-            <ul class="dropspecialty">
+            <span className="dropspecialty">
               <li>Condominium</li>
               <li>Apartment</li>
               <li>Detached House</li>
               <li>Semi-detached House</li>
               <li>Town House</li>
               <li>Duplex/Triplex</li>
-            </ul>
+            </span>
           </p>
           <p>
             profile pic: <input type="url" className="ageimg" placeholder="http://"></input>
@@ -31,7 +31,4 @@ export default class RegisterNewAgent extends React.Component {
       </div>
     )
   }
-
-
-
 }
