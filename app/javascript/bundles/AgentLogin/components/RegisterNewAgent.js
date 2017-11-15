@@ -14,14 +14,8 @@ export default class RegisterNewAgent extends React.Component {
           <p>password: <input className="agepw"></input></p>
           <p>biography: <input className="agebio"></input></p>
           <p>specialty:
-            <span className="dropspecialty">
-              <li>Condominium</li>
-              <li>Apartment</li>
-              <li>Detached House</li>
-              <li>Semi-detached House</li>
-              <li>Town House</li>
-              <li>Duplex/Triplex</li>
-            </span>
+            <input className="agespecialty"></input><br></br>
+            <span>(eg. Condominium,Semi-detached House)</span>
           </p>
           <p>profile pic: <input type="url" className="ageimg" placeholder="http://"></input></p>
           <p><button type="submit">Register</button></p>

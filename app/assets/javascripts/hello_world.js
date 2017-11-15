@@ -58,7 +58,21 @@ $( document ).ready(function() {
         location:{
           required: true,
         },
-        
+        budget: {
+          required: true,
+        },
+        size: {
+          required: true,
+        },
+        age: {
+          required: false,
+        },
+        address: {
+          required: false,
+        },
+        occupation: {
+          required: false,
+        }
       },
       messages: {
         name: "Please enter your name",
@@ -67,10 +81,13 @@ $( document ).ready(function() {
           required: "Please provide a password",
           minlength: "Your password must be at least 5 characters long"
         },
+        location: "Please provide your preferred new property location",
+        budget: "Please provide your budget of purchase",
+        size: "Please provide the size of new property"
       },
 
       submitHandler: function(form) {
-            console.log('test')
+          console.log('test')
           var formdata = $(form).serialize();
           $.ajax({
             url: '/client_profile',
