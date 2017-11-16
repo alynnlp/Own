@@ -11,7 +11,7 @@ class AgentProfileController < ApplicationController
     @agent = Agent.find(params[:id])
   end
 
-  def create  
+  def create
   end
 
   def new
