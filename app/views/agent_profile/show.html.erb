@@ -12,12 +12,14 @@
 
 <%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
 
-<div class="userinfo">
+<div class="agentinfo">
   <center>
     <p>
-      <img class="bigdisplay" src="<%= @agent.img %>" alt="Profile Picture"></img>
-      <h2><%= @agent.name %></h2>
-      <h3>Average Rating: 3.5</h3>
+      <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
+        <b><%= @agent.name %></b>
+      <% @clientreview.each do |review| %>
+        <span>Rating: <%= review.rating %></span>
+      <% end %>
     </p>
     <p>
       <h5 class="title"> About Me </h5>
@@ -28,7 +30,7 @@
   </center>
 </div>
 
-<div class="history">
+<div class="agenthistory">
   <div class="messagedagent">
     <p><center>Clients Messages</center></p>
     <div class="scrollbar scrollbar-morpheus-den messagedagent">
