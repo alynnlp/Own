@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/agent_profile/1">Profile</a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/home">Log out</a></li>
+  </ul>
+</nav>
+
+<div class="agentprofileinfoedit">
+  <center>
+    <p>
+      <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
+        <b><%= @agent.name %></b>
+    </p>
+    <p>
+      <h5 class="title"> About Me </h5>
+      <b>specialty:</b> <%= @agent.specialty %><br>
+      <input class="edit" name="editspecial"></input> <br>
+      <b>location:</b> <%= @agent.location %><br>
+      <input class="edit" name="editlocation"></input> <br>
+      <b>bio: </b> <%= @agent.bio %><br>
+      <input class="edit" name="editbio"></input> <br>
+      <button type="submit">Save</button>
+    </p>
+    <%= link_to 'Back', agent_profile_path(@agent) %>
+  </center>
+</div>

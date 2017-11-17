@@ -20,6 +20,7 @@ class AgentProfileController < ApplicationController
   end
 
   def edit
+    @agent = Agent.find(params[:id])
   end
 
   def update
