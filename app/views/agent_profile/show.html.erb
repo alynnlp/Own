@@ -1,11 +1,13 @@
-<header>
-  <p class="agentbanner">
-    The Real World
-  </p>
-</header>
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/agent_profile/1">Profile</a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/home">Log out</a></li>
+  </ul>
+</nav>
 
-<div>
-  <button>Congratulations! You have 1 new message!</button>
+<div class="messagenotification">
+  <center><div>Congratulations! You have <span class="badge"><%= @clientmessage.length %></span> new message!</div></center>
 </div>
 
 <%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
@@ -19,28 +21,52 @@
   <p>Biography: I am the ONLY AGENT who can find you the PERFECT home! :)</p>
 </div>
 
-<div>
-  <h3>Average Rating: 3.5</h3>
-  <img>Animation of stars</img>
+<div class="userinfo">
+  <center>
+    <h2><%= @client.name %></h2>
+    <h3>Average Rating: 3.5</h3>
+    <p>
+      <h5 class="title"> About Me </h5>
+      <b>Occupation:</b> <%= @user.occupation %><br>
+      <b>Age:</b> <%= @user.age %><br>
+      <b>Address:</b> <%= @user.address %><br>
+    </p>
+    <p>
+      <h5 class="title">Property Requirement</h5>
+      <b>Area:</b> <%= @user.location %><br>
+      <b>Budget:</b> <%= @user.budget %>,000<br>
+      <b>Size:</b> <%= @user.size %><br>
+    </p>
+  </center>
 </div>
 
-<div>
-  <h3>Comment</h3>
-  <ul>
-    <li>
-      <p>User 1:<p>
-      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-      </p>
-    </li>
-    <li>
-      <p>User 2:<p>
-      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-      </p>
-    </li>
-    <li>
-      <p>User 3:<p>
-      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-      </p>
-    </li>
-  </ul>
+<div class="history">
+  <div class="messagedagent">
+    <p><center>Clients Messages</center></p>
+    <div class="scrollbar scrollbar-morpheus-den messagedagent">
+      <div class="force-overflow">
+        <% @clientmessage.each do |message| %>
+          <ul>
+            <p><%= message.user.name %>
+            <p><%= message.content %></p>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="reviewedagent">
+    <p><center>Clients Reviews</center></p>
+    <div class="scrollbar scrollbar-morpheus-den messagedagent">
+      <div class="force-overflow">
+        <% @clientreview.each do |review| %>
+          <ul>
+            <p><%= review.user.name %><br>
+            <p>
+              <b>Rating: </b><%= review.rating %><br>
+              <%= review.comment %>
+            </p>
+          </ul>
+        <% end %>
+      </div>
+    </div>
 </div>

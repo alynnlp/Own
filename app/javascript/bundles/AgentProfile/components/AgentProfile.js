@@ -9,7 +9,7 @@ export default class AgentProfile extends React.Component {
 
   render(){
     return (
-      <h2>Profile</h2>
+      <h2></h2>
     )
   }
 }

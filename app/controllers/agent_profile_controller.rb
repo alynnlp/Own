@@ -9,6 +9,8 @@ class AgentProfileController < ApplicationController
 
   def show
     @agent = Agent.find(params[:id])
+    @clientmessage = Message.where(agent_id: params[:id])
+    @clientreview = Review.where(agent_id: params[:id])
   end
 
   def create

@@ -1,11 +1,15 @@
 class AgentLoginController < ApplicationController
   layout 'agent_login'
   def index
-    @agent = Agent.all
+    @agents = Agent.all
     @agent_props = {
       name: 'Aileen Pang'
     }
-    render component: 'AgentLogin', props: {agent: @agent}
+    render component: 'AgentLogin', props: {agent: @agents}
+  end
+
+  def show
+    @agent = Agent.find(params[:id])
   end
 
   def new
@@ -17,14 +21,17 @@ class AgentLoginController < ApplicationController
   end
 
   def create
+    
     @agent = Agent.new(register_params)
 
     respond_to do |format|
       format.json do
       if @agent.save
-        render :json => @agent
+        format.html { redirect_to @agent, notice: 'Agent was successfully listed.' }
+        format.json { render json: @agent }
       else
-        render :json => {:errors => @agent.errors.messages }, :status => 422
+        format.html {render :new}
+        format.html {render json:@agent.errors}
       end
     end
   end

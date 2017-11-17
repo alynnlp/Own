@@ -19,11 +19,15 @@ export default class RegisterNewAgent extends React.Component {
         continue;
       }
       formData[element.name] = element.value;
-    }
+    };
     console.log('--->', formData)
-    fetch('http://localhost:3000/agentlogin', formData, {
-      method:'POST',
-      body: JSON.stringify({
+    fetch('/agentlogin', formData, {
+      method:"POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: ({
         name: formData.name,
         email: formData.email,
         password: formData.password,
@@ -33,8 +37,9 @@ export default class RegisterNewAgent extends React.Component {
         img: formData.img,
       })
     }).then(res => {
+      console.log(res)
       return res;
-    }).catch(err => err);
+    }).catch(err => console.log(err));
   }
 
   render(){
