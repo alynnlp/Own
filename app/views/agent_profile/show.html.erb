@@ -12,7 +12,7 @@
 
 <%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
 
-<div class="agentinfo">
+<div class="agentprofileinfo">
   <center>
     <p>
       <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
@@ -23,9 +23,9 @@
     </p>
     <p>
       <h5 class="title"> About Me </h5>
-      <b>bio:</b> <%= @agent.bio %><br>
       <b>specialty:</b> <%= @agent.specialty %><br>
       <b>location:</b> <%= @agent.location %><br>
+      <b>bio:</b> <%= @agent.bio %><br>
     </p>
   </center>
 </div>
