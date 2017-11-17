@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
   <ul class="nav nav-pills" role="tablist">
     <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/client_profile/1">Profile <span class="badge"><%= @agentmessage.length %></span></a></li>
-    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/home">Log out</a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000">Log out</a></li>
   </ul>
 </nav>
 
@@ -12,7 +12,7 @@
   <b>Rating:</b> <%= @agent.reviews.first.rating %><i class="fa fa-star"></i></p>
   <div class="scrollbar scrollbar-morpheus-den agentinfo">
     <div class="force-overflow">
-      <p>        
+      <p>
         <b>Specialized Location:</b> <%= @agent.location %><br>
         <b>Specialty:</b> <%= @agent.specialty %><br>
       </p>
