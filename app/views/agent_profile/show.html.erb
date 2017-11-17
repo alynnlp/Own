@@ -12,30 +12,18 @@
 
 <%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
 
-<div>
-  <img class="bigdisplay" src="../../images/testdisplay.jpg" alt="Profile Picture"></img>
-  <p>UPDATE INFO</p>
-  <p>Name: Mr. Agent</p>
-  <p>Location: Downtown Toronto, Etobicoke</p>
-  <p>Specialty: Condominium</p>
-  <p>Biography: I am the ONLY AGENT who can find you the PERFECT home! :)</p>
-</div>
-
 <div class="userinfo">
   <center>
-    <h2><%= @client.name %></h2>
-    <h3>Average Rating: 3.5</h3>
     <p>
-      <h5 class="title"> About Me </h5>
-      <b>Occupation:</b> <%= @user.occupation %><br>
-      <b>Age:</b> <%= @user.age %><br>
-      <b>Address:</b> <%= @user.address %><br>
+      <img class="bigdisplay" src="<%= @agent.img %>" alt="Profile Picture"></img>
+      <h2><%= @agent.name %></h2>
+      <h3>Average Rating: 3.5</h3>
     </p>
     <p>
-      <h5 class="title">Property Requirement</h5>
-      <b>Area:</b> <%= @user.location %><br>
-      <b>Budget:</b> <%= @user.budget %>,000<br>
-      <b>Size:</b> <%= @user.size %><br>
+      <h5 class="title"> About Me </h5>
+      <b>bio:</b> <%= @agent.bio %><br>
+      <b>specialty:</b> <%= @agent.specialty %><br>
+      <b>location:</b> <%= @agent.location %><br>
     </p>
   </center>
 </div>
