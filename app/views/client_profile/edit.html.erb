@@ -1,16 +1,16 @@
 <nav class="navbar sticky-top navbar-light bg-light">
   <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
   <ul class="nav nav-pills" role="tablist">
-    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/agent_profile/1">Profile</a></li>
-    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000/home">Log out</a></li>
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/client_profile/1">Profile</a></li>
+    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000">Log out</a></li>
   </ul>
 </nav>
 
-<div class="agentprofileinfoedit">
+<div class="userprofileinfoedit">
   <center>
     <p>
         <h4> Edit Profile </h4>
-        <h3><%= @agent.name %></h3>
+        <h3><%= @user.name %></h3>
         <%= form_for @agent do |f| %>
         <div class="scrollbar scrollbar-morpheus-den messagedagent editpage">
           <p>

@@ -11,7 +11,7 @@ class ClientProfileController < ApplicationController
     @user = User.find(params[:id])
     @agentmessage = Message.where(user_id: params[:id])
     @agentreview = Review.where(user_id: params[:id])
-    
+
   end
 
   def new
@@ -40,11 +40,16 @@ class ClientProfileController < ApplicationController
   end
 
   def edit
+    @agent = Agent.find(params[:id])
   end
-
   def update
+    @agent = Agent.find(params[:id])
+    if @agent.update_attributes(agent_params)
+      redirect_to edit_agent_profile_path, :notice => "Your profile has been updated"
+    else
+      render "show"
+    end
   end
-
   def destroy
   end
 

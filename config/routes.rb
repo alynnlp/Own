@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    get 'home', to: 'hello_world#index'
+    get '/', to: 'hello_world#index'
     post '/agent/:id/agentrequest', to: 'agent#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
