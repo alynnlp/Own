@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     # get 'agent/:id' => 'agent_profile#show'
     resources :agent, controller: :agent
     resources :clientresponse, controller: :client_response
+
     resources :agentlogin, controller: :agent_login
+    resources :login, controller: :login
+
     resources :agent_profile, controller: :agent_profile
     resources :client_profile, controller: :client_profile
 

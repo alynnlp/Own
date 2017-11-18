@@ -122,6 +122,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-footnotes (3.7.9)
+      rails (>= 3.0.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (5.1.4)
@@ -158,6 +160,9 @@ GEM
     selenium-webdriver (3.6.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -209,9 +214,11 @@ DEPENDENCIES
   mini_racer
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rails-footnotes (~> 3.7.9)
   react_on_rails (~> 9.0.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
@@ -222,4 +229,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
