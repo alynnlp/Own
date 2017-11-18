@@ -27,18 +27,20 @@
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
-  opacity: 0.9;
+  opacity: 0.85;
   border-radius: 10px;
   padding: 30px;
   position: fixed;
-  top:15%;
+  top:18%;
   left:25%;
   z-index:0;
   width: 50%;
   text-align: center;
 }
 
-.registerpage {
-  z-index: 1;
-  opacity: 2;
+
+div.agentregister.scrollbar.scrollbar-morpheus-den.messagedagent {
+    height: 600px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
 }

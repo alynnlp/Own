@@ -26,6 +26,7 @@ class AgentController < ApplicationController
 
   def create
     @agent = Agent.find(params[:id])
+    
     @request = Message.new(params[agentrequest_params])
 
     if @request.save
@@ -33,6 +34,7 @@ class AgentController < ApplicationController
     else
       render 'show'
     end
+
   end
 
   def update

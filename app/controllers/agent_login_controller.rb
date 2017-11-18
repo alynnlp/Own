@@ -12,43 +12,26 @@ class AgentLoginController < ApplicationController
     @agent = Agent.find(params[:id])
   end
 
-  def new
-    @agent = Agent.all
-    @RegisterNewAgent = Agent.new
+  def new #registerpage
+    @newAgent = Agent.new
     respond_to do |format|
       format.html
-      format.json { render json: @RegisterNewAgent}
+      format.json { render json: @newAgent}
     end
   end
 
-  def create
-
-    @agent = Agent.new(register_params)
-
-    respond_to do |format|
-      format.json do
-      if @agent.save
-        format.html { redirect_to @agent, notice: 'Agent was successfully listed.' }
-        format.json { render json: @agent }
-      else
-        format.html {render :new}
-        format.html {render json:@agent.errors}
-      end
+  def create #process register information
+    @newAgent = Agent.new(register_params)
+    if @newAgent.save
+      redirect_to @newAgent, notice: 'New agent was successfully created.'
+    else
+      redirect_to action: "new", notice: "error"
     end
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private
     def register_params
-      params.require(:agent).permit(:name, :email, :password, :bio, :specialty, :img)
+      params.require(:agent).permit(:utf8, :authenticity_token, :commit, :name, :email, :password, :bio, :specialty, :location, :img)
     end
-end
+
 end
