@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
 gem 'simple_form'
+gem 'bootstrap-sass', '~> 2.3.1.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -46,7 +47,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  
+
   gem 'rails-footnotes', '~> 3.7.9'
 end
 
