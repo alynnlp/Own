@@ -13,6 +13,7 @@ class AgentLoginController < ApplicationController
   end
 
   def new
+    @agent = Agent.all
     @RegisterNewAgent = Agent.new
     respond_to do |format|
       format.html
@@ -21,7 +22,7 @@ class AgentLoginController < ApplicationController
   end
 
   def create
-    
+
     @agent = Agent.new(register_params)
 
     respond_to do |format|

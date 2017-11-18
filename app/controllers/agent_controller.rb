@@ -10,8 +10,6 @@ class AgentController < ApplicationController
   def show
     @agent = Agent.find(params[:id])
     @agentmessage = Message.where(user_id: params[:id])
-
-
     # @agentname = Agent.find(params[:id]).name
     # @agentbio = Agent.find(params[:id]).bio
     # @agentspecialty = Agent.find(params[:id]).specialty

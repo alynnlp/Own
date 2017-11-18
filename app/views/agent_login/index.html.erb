@@ -11,27 +11,5 @@
     <p>email:<input></input></p>
     <p>password:<input></input></p>
   </form>
-  <div className="registerpage">
-    <h3>REGISTER</h3>
-    <hr />
-    <form id="userregisterform" name="myForm" className="registerform" onSubmit={this.handleSubmit}>
-      <label htmlFor="agenname">name: </label>
-        <input placeholder="Full name" id="agename" name="name" type="text"></input><br>
-      <label htmlFor="ageemail">email: </label>
-        <input placeholder="example@gmail.com" id="ageemail" name="email" type="email"></input><br>
-      <label htmlFor="agepw">password: </label>
-        <input id="agepw" name="password" type="string"></input><br>
-      <label htmlFor="agebio">biography: </label>
-        <input id="agebio" name="bio" type="text"></input><br>
-      <label htmlFor="agespecialty">specialty: </label>
-        <input id="agespecialty" name="specialty" type="text"></input><br>
-        <span>(eg. Condominium, Semi-detached House)</span><br>
-      <label htmlFor="agelocation">location: </label>
-        <input id="agelocation" name="location" type="text"></input><br>
-      <label htmlFor="ageimg">profile pic: </label>
-        <input id="ageimg" name="img" placeholder="http://" type="url" ></input><br>
-      <input type="submit" value="Submit"/>
-    </form>
-  </div>
-
+  <%= link_to 'Register', new_agentlogin_path(@agent)%>
 </div>
