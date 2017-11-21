@@ -19,6 +19,10 @@ class AgentController < ApplicationController
   def new
   end
 
+  def edit #edit page for agent settings
+    @agent = Agent.find(params[:id])
+  end
+
   def create #process request information from users
     @agent = Agent.find(params[:id])
     @request = Message.new(params[agentrequest_params])
@@ -29,12 +33,27 @@ class AgentController < ApplicationController
     end
   end
 
+  def edit #edit page for agent settings
+    @agent = Agent.find(params[:id])
+  end
+
+  def update #process edited information
+    @agent = Agent.find(params[:id])
+    if @agent.update_attributes(agent_params)
+      redirect_to agent_profile_path(@agent)
+      flash[:success] = "Your profile has been updated"
+    else
+      redirect_to edit_agent_profile_path, notice: "error"
+    end
+  end
+
   private
     def agentrequest_params
       params.require(:message).permit(:content)
     end
+
     def agent_params
-      params.require(:agent).permit(:name, :email, :password,:bio, :specialty, :location)
+      params.permit(:email, :password,:bio, :specialty, :location)
     end
 
 end

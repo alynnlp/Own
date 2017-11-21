@@ -11,13 +11,13 @@
   <%= simple_form_for(:session, url: agent_login_path) do |f| %>
   <p>
     <%= f.label :email %> :
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control'%>
   </p>
   <p>
     <%= f.label :password %> :
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: 'form-control' %>
   </p>
-  <%= f.button :submit %>
+  <%= f.submit "Log in", class: "btn btn-primary"%>
   <% end %>
 
   <%= link_to 'Register', agent_register_path(@agent)%>

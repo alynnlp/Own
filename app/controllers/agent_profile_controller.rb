@@ -12,19 +12,21 @@ class AgentProfileController < ApplicationController
   def edit #edit page for agent settings
     @agent = Agent.find(params[:id])
   end
+
   def update #process edited information
     @agent = Agent.find(params[:id])
     if @agent.update_attributes(agent_params)
+      @agent.save
       redirect_to agent_profile_path(@agent)
       flash[:success] = "Your profile has been updated"
     else
-      render "edit", notice: "error"
+      redirect_to edit_agent_profile_path, notice: "error"
     end
   end
 
   private
     def agent_params
-      params.require(:agent).permit(:utf8, :authenticity_token, :commit, :name, :email, :password, :bio, :specialty, :location, :img)
+      params.require(:agent).permit(:name, :email, :password, :bio, :specialty, :location, :img)
     end
 
 end

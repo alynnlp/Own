@@ -1,16 +1,15 @@
 class AgentSessionController < ApplicationController
   def new #login page
-    @agent = Agent.new
   end
 
   def create #process login information
-    @agent = Agent.find_by(email: params[:session][:email].downcase)
-    if @agent && @agent.authenticate(params[:session][:password])
-      session[:agent_id] = @agent.id
-      flash[:success] = "#{@agent.email}, Successfully logged in!"
+    agent = Agent.find_by(email: params[:session][:email].downcase)
+    if agent && agent.authenticate(params[:session][:password])
+      session[:agent_id] = agent.id
+      flash[:success] = "#{agent.email}, Successfully logged in!"
       redirect_to agent_profile_path(agent), :notice => "Logged in!"
     else
-      flash.now[:danger] = "Incorrect User/Password"
+      flash[:danger] = "Incorrect User/Password"
       redirect_to agent_login_path
     end
   end

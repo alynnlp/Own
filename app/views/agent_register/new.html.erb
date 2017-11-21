@@ -7,7 +7,7 @@
 <div class="agentregister scrollbar scrollbar-morpheus-den messagedagent">
   <h3>REGISTER</h3>
   <hr />
-  <%= simple_form_for(@newAgent, url: agentlogin_index_path, html: { class: 'form-horizontal'}) do |f| %>
+  <%= simple_form_for(@newAgent, url: agent_register_path, html: { class: 'form-horizontal'}) do |f| %>
     <p>
       <%= f.label :name %> :
       <%= f.text_field :name %>
@@ -39,5 +39,5 @@
     </p>
     <%= f.button :submit %>
   <% end %>
-  <%= link_to 'Back', agentlogin_index_path%>
+  <%= link_to 'Back', agent_login_path%>
 </div>

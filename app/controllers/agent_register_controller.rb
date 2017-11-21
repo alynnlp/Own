@@ -7,11 +7,16 @@ class AgentRegisterController < ApplicationController
   def create #process register information
     @newAgent = Agent.new(register_params)
     if @newAgent.save
-      log_in @newAgent
-      redirect_to agentlogin_path(@newAgent), notice: 'New agent was successfully created.'
+      session[:agent_id] = @newAgent.id
+      redirect_to agent_profile_path(@newAgent), notice: 'New agent was successfully created.'
     else
       redirect_to action: "new", notice: "error"
     end
   end
+
+  private
+    def register_params
+      params.require(:agent).permit(:utf8, :authenticity_token, :commit, :name, :email, :password, :password_confirmation, :bio, :specialty, :location, :img)
+    end
 
 end

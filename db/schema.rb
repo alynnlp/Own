@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120224759) do
+ActiveRecord::Schema.define(version: 20171121214016) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171120224759) do
     t.string "img"
     t.string "salt"
     t.string "password_digest"
+    t.string "password_digestion"
   end
 
   create_table "messages", force: :cascade do |t|
