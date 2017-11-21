@@ -16,16 +16,20 @@
   <center>
     <p>
       <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
-        <b><%= @agent.name %></b>
       <% @clientreview.each do |review| %>
         <span>Rating: <%= review.rating %></span>
       <% end %>
     </p>
     <p>
       <h5 class="title"> About Me </h5>
-      <b>specialty:</b> <%= @agent.specialty %><br>
-      <b>location:</b> <%= @agent.location %><br>
-      <b>bio:</b> <%= @agent.bio %><br>
+      <div class="scrollbar scrollbar-morpheus-den messagedagent">
+        <b>name:</b> <%= @agent.name %> <br>
+        <b>email:</b> <%= @agent.email %> <br>
+        <b>password:</b> <%= @agent.password %> <br>
+        <b>specialty:</b> <%= @agent.specialty %><br>
+        <b>location:</b> <%= @agent.location %><br>
+        <b>bio:</b> <%= @agent.bio %><br>
+      </div>
     </p>
     <%= link_to 'Edit', edit_agent_profile_path(@agent) %>
   </center>
