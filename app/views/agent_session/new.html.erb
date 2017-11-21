@@ -8,7 +8,7 @@
   <p>Let's help you start growing your business...</p>
   <h3>Login</h3>
 
-  <%= simple_form_for(@agent, url: agentlogin_index_path) do |f| %>
+  <%= simple_form_for(:session, url: agent_login_path) do |f| %>
   <p>
     <%= f.label :email %> :
     <%= f.text_field :email %>
@@ -20,5 +20,5 @@
   <%= f.button :submit %>
   <% end %>
 
-  <%= link_to 'Register', new_agentlogin_path(@agent)%>
+  <%= link_to 'Register', agent_register_path(@agent)%>
 </div>

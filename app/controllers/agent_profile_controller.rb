@@ -1,11 +1,6 @@
-class AgentLoginController < ApplicationController
-  layout 'agent_login'
-  def index #agent login page
-    @agents = Agent.all
-    # @agent_props = {
-    #   name: 'Aileen Pang'
-    # }
-    @agent = Agent.find_by(params[:id])
+class AgentProfileController < ApplicationController
+  layout 'agent_profile'
+  def index
   end
 
   def show #agentprofile
@@ -14,10 +9,10 @@ class AgentLoginController < ApplicationController
     @clientreview = Review.where(agent_id: params[:id])
   end
 
-  def edit
+  def edit #edit page for agent settings
     @agent = Agent.find(params[:id])
   end
-  def update
+  def update #process edited information
     @agent = Agent.find(params[:id])
     if @agent.update_attributes(agent_params)
       redirect_to agent_profile_path(@agent)
@@ -28,7 +23,7 @@ class AgentLoginController < ApplicationController
   end
 
   private
-    def register_params
+    def agent_params
       params.require(:agent).permit(:utf8, :authenticity_token, :commit, :name, :email, :password, :bio, :specialty, :location, :img)
     end
 
