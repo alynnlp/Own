@@ -1,33 +1,29 @@
 class AgentLoginController < ApplicationController
   layout 'agent_login'
-  def index
+  def index #agent login page
     @agents = Agent.all
-    @agent_props = {
-      name: 'Aileen Pang'
-    }
-    render component: 'AgentLogin', props: {agent: @agents}
+    # @agent_props = {
+    #   name: 'Aileen Pang'
+    # }
+    @agent = Agent.find_by(params[:id])
   end
 
-  def show
+  def show #agentprofile
+    @agent = Agent.find(params[:id])
+    @clientmessage = Message.where(agent_id: params[:id])
+    @clientreview = Review.where(agent_id: params[:id])
+  end
+
+  def edit
     @agent = Agent.find(params[:id])
   end
-
-  def new #registerpage
-    @newAgent = Agent.new
-    respond_to do |format|
-      format.html
-      format.json { render json: @newAgent}
-    end
-  end
-
-  def create #process register information
-    @newAgent = Agent.new(register_params)
-
-
-    if @newAgent.save
-      redirect_to agent_profile_path(@newAgent), notice: 'New agent was successfully created.'
+  def update
+    @agent = Agent.find(params[:id])
+    if @agent.update_attributes(agent_params)
+      redirect_to agent_profile_path(@agent)
+      flash[:success] = "Your profile has been updated"
     else
-      redirect_to action: "new", notice: "error"
+      render "edit", notice: "error"
     end
   end
 

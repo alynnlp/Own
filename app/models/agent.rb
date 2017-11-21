@@ -1,13 +1,13 @@
 class Agent < ApplicationRecord
-
   has_many :messages
   has_many :reviews
   has_many :responses
-
   has_many :messaged_users, through: :messages, source: :user
   has_many :reviewed_users, through: :reviews, source: :user
   has_many :responsed_user, through: :responses, source: :user
 
+  has_secure_password
+  attr_accessor :password
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :name, :presence => true, :length => { :in => 3..20 }
   validates :email, :presence => true, :uniqueness => true, :format => EMAIL_REGEX
@@ -28,7 +28,7 @@ class Agent < ApplicationRecord
   end
 
   def agent_params
-     params.require(:agent).permit(:name, :email, :password)
-   end
+     params.require(:agent).permit(:name, :email, :password, :bio, :specialty, :location)
+  end
 
 end

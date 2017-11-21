@@ -7,9 +7,18 @@
 <div class="agentlogin">
   <p>Let's help you start growing your business...</p>
   <h3>Login</h3>
-  <form id="agentlogin" className="agentlogin">
-    <p>email:<input></input></p>
-    <p>password:<input></input></p>
-  </form>
+
+  <%= simple_form_for(@agent, url: agentlogin_index_path) do |f| %>
+  <p>
+    <%= f.label :email %> :
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %> :
+    <%= f.password_field :password %>
+  </p>
+  <%= f.button :submit %>
+  <% end %>
+
   <%= link_to 'Register', new_agentlogin_path(@agent)%>
 </div>
