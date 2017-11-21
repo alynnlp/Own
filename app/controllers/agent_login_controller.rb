@@ -22,8 +22,10 @@ class AgentLoginController < ApplicationController
 
   def create #process register information
     @newAgent = Agent.new(register_params)
+
+
     if @newAgent.save
-      redirect_to @newAgent, notice: 'New agent was successfully created.'
+      redirect_to agent_profile_path(@newAgent), notice: 'New agent was successfully created.'
     else
       redirect_to action: "new", notice: "error"
     end

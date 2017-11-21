@@ -7,7 +7,8 @@ class Agent < ApplicationRecord
   has_many :reviewed_users, through: :reviews, source: :user
   has_many :responsed_user, through: :responses, source: :user
 
+  has_secure_password
 
-  
+
 
 end
