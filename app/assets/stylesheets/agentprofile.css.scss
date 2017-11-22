@@ -45,7 +45,6 @@
   margin: 30px 0px;
 }
 
-
 .profileinfoedit {
   // position: absolute;
   // top: 25%;
@@ -62,8 +61,13 @@
   margin-top: 40px;
 }
 
+div.scrollbar.scrollbar-morpheus-den.messagedagent {
+  height: 500em;       /* Just for the demo          */
+  overflow-y: auto;    /* Trigger vertical scroll    */
+  overflow-x: hidden;  /* Hide the horizontal scroll */
+}
 
-div.scrollbar.scrollbar-morpheus-den.messagedagent.editpage {
+div.scrollbar.scrollbar-morpheus-den.editpage {
     height: 300px;       /* Just for the demo          */
     overflow-y: auto;    /* Trigger vertical scroll    */
     overflow-x: hidden;  /* Hide the horizontal scroll */

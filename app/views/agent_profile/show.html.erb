@@ -7,7 +7,13 @@
 </nav>
 
 <div class="messagenotification">
-  <center><div>Congratulations! You have <span class="badge"><%= @clientmessage.length %></span> new message!</div></center>
+  <center>
+    <% if @clientmessage.length === 0 %>
+      <div> Sorry ! There is no message for you at the moment . </div>
+    <% else %>
+      <div>Congratulations! You have <span class="badge"><%= @clientmessage.length %></span> new message!</div>
+    <% end %>
+  </center>
 </div>
 
 <%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
@@ -20,9 +26,13 @@
         <center>
           <p>
             <h5> <%= @agent.name %> </h5>
-            <% @clientreview.each do |review| %>
-              <span>Rating: <%= review.rating %></span>
-            <% end %><br>
+            <% if @clientreview.length === 0 %>
+              <div> No rating right now . </div>
+            <% else %>
+              <% @clientreview.each do |review| %>
+                Rating:<%= review.rating %>
+              <% end %><br>
+            <% end %>
             <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
           </p>
           <p>
@@ -47,7 +57,17 @@
             <div class="force-overflow">
               <% @clientmessage.each do |message| %>
                 <ul>
-                  <p><%= message.user.name %>
+                  <p>
+                    <b><%= message.user.name %></b>
+                      <span class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-sm btn-secondary">
+                          <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                        </label>
+                        <label class="btn btn-sm btn-secondary">
+                          <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                        </label>
+                      </span>
+                  </p>
                   <p><%= message.content %></p>
                 </ul>
               <% end %>
@@ -60,7 +80,7 @@
             <div class="force-overflow">
               <% @clientreview.each do |review| %>
                 <ul>
-                  <p><%= review.user.name %><br>
+                  <p><h5><%= review.user.name %></h5>
                   <p>
                     <b>Rating: </b><%= review.rating %><br>
                     <%= review.comment %>
