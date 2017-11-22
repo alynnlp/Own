@@ -12,56 +12,65 @@
 
 <%= react_component("AgentProfile", props: @agent_profile_props, prerender: false) %>
 
-<div class="agentprofileinfo">
-  <center>
-    <p>
-      <h5> <%= @agent.name %> </h5>
-      <% @clientreview.each do |review| %>
-        <span>Rating: <%= review.rating %></span>
-      <% end %><br>
-      <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
-    </p>
-    <p>
-      <h5 class="title"> About Me </h5>
-      <div class="scrollbar scrollbar-morpheus-den messagedagent">
-        <b>email:</b> <%= @agent.email %> <br>
-        <b>password:</b> ----- <%= @agent.password %> <br>
-        <b>specialty:</b> <%= @agent.specialty %><br>
-        <b>location:</b> <%= @agent.location %><br>
-        <b>bio:</b> <%= @agent.bio %><br>
-      </div>
-    </p>
-    <%= link_to 'Edit', edit_agent_profile_path(@agent) %>
-  </center>
-</div>
 
-<div class="agenthistory">
-  <div class="messagedagent">
-    <p><center>Clients Messages</center></p>
-    <div class="scrollbar scrollbar-morpheus-den messagedagent">
-      <div class="force-overflow">
-        <% @clientmessage.each do |message| %>
-          <ul>
-            <p><%= message.user.name %>
-            <p><%= message.content %></p>
-          </ul>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="agentprofileinfo">
+        <center>
+          <p>
+            <h5> <%= @agent.name %> </h5>
+            <% @clientreview.each do |review| %>
+              <span>Rating: <%= review.rating %></span>
+            <% end %><br>
+            <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
+          </p>
+          <p>
+            <h5 class="title"> About Me </h5>
+            <div class="scrollbar scrollbar-morpheus-den messagedagent">
+              <b>email:</b> <%= @agent.email %> <br>
+              <b>password:</b> ----- <%= @agent.password %> <br>
+              <b>specialty:</b> <%= @agent.specialty %><br>
+              <b>location:</b> <%= @agent.location %><br>
+              <b>bio:</b> <%= @agent.bio %><br>
+            </div>
+          </p>
+          <%= link_to 'Edit', edit_agent_profile_path(@agent) %>
+        </center>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="agenthistory">
+        <div class="messagedagent">
+          <p><center>Clients Messages</center></p>
+          <div class="scrollbar scrollbar-morpheus-den messagedagent">
+            <div class="force-overflow">
+              <% @clientmessage.each do |message| %>
+                <ul>
+                  <p><%= message.user.name %>
+                  <p><%= message.content %></p>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="reviewedagent">
+          <p><center>Clients Reviews</center></p>
+          <div class="scrollbar scrollbar-morpheus-den messagedagent">
+            <div class="force-overflow">
+              <% @clientreview.each do |review| %>
+                <ul>
+                  <p><%= review.user.name %><br>
+                  <p>
+                    <b>Rating: </b><%= review.rating %><br>
+                    <%= review.comment %>
+                  </p>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="reviewedagent">
-    <p><center>Clients Reviews</center></p>
-    <div class="scrollbar scrollbar-morpheus-den messagedagent">
-      <div class="force-overflow">
-        <% @clientreview.each do |review| %>
-          <ul>
-            <p><%= review.user.name %><br>
-            <p>
-              <b>Rating: </b><%= review.rating %><br>
-              <%= review.comment %>
-            </p>
-          </ul>
-        <% end %>
-      </div>
-    </div>
 </div>
