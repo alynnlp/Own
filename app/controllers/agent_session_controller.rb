@@ -21,8 +21,7 @@ class AgentSessionController < ApplicationController
 
   def destroy #destroy the session
     session[:agent_id] = nil
-    flash[:success] = "You have logged out"
-    redirect_to root_path
+    redirect_to '/', :notice => "Logged out"
   end
 
   private

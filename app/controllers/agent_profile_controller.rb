@@ -24,6 +24,10 @@ class AgentProfileController < ApplicationController
     end
   end
 
+  def destroy
+    
+  end
+
   private
     def agent_params
       params.require(:agent).permit(:name, :email, :password, :bio, :specialty, :location, :img)
