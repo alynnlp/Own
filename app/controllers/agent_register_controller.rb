@@ -1,4 +1,5 @@
 class AgentRegisterController < ApplicationController
+  layout 'agent_login'
 
   def new #agent register page
     @newAgent = Agent.new

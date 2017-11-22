@@ -1,12 +1,14 @@
 class AgentSessionController < ApplicationController
+  layout 'agent_login'
+
   def new #login page
   end
 
   def create #process login information
     agent = Agent.find_by(email: params[:session][:email].downcase)
-    puts 'AGENT SESSION PARAMS'
-    puts params[:session][:password]
-    puts '***********'
+    # puts 'AGENT SESSION PARAMS'
+    # puts params[:session][:password]
+    # puts '***********'
     if agent && agent.authenticate(params[:session][:password])
       session[:agent_id] = agent.id
       flash[:success] = "#{agent.email}, Successfully logged in!"

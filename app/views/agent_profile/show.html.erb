@@ -15,17 +15,17 @@
 <div class="agentprofileinfo">
   <center>
     <p>
-      <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
+      <h5> <%= @agent.name %> </h5>
       <% @clientreview.each do |review| %>
         <span>Rating: <%= review.rating %></span>
-      <% end %>
+      <% end %><br>
+      <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
     </p>
     <p>
       <h5 class="title"> About Me </h5>
       <div class="scrollbar scrollbar-morpheus-den messagedagent">
-        <b>name:</b> <%= @agent.name %> <br>
         <b>email:</b> <%= @agent.email %> <br>
-        <b>password:</b> <%= @agent.password %> <br>
+        <b>password:</b> ----- <%= @agent.password %> <br>
         <b>specialty:</b> <%= @agent.specialty %><br>
         <b>location:</b> <%= @agent.location %><br>
         <b>bio:</b> <%= @agent.bio %><br>
