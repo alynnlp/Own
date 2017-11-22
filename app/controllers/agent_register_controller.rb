@@ -5,7 +5,13 @@ class AgentRegisterController < ApplicationController
   end
 
   def create #process register information
+    puts 'REGISTER PARAMS'
+    puts register_params
+    puts '********'
     @newAgent = Agent.new(register_params)
+    puts 'NEW AGENT'
+    puts @newAgent
+    puts '**********'
     if @newAgent.save
       session[:agent_id] = @newAgent.id
       redirect_to agent_profile_path(@newAgent), notice: 'New agent was successfully created.'

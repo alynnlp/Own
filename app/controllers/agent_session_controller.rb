@@ -4,6 +4,9 @@ class AgentSessionController < ApplicationController
 
   def create #process login information
     agent = Agent.find_by(email: params[:session][:email].downcase)
+    puts 'AGENT SESSION PARAMS'
+    puts params[:session][:password]
+    puts '***********'
     if agent && agent.authenticate(params[:session][:password])
       session[:agent_id] = agent.id
       flash[:success] = "#{agent.email}, Successfully logged in!"
@@ -19,4 +22,7 @@ class AgentSessionController < ApplicationController
     flash[:success] = "You have logged out"
     redirect_to root_path
   end
+
+  private
+
 end
