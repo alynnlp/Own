@@ -7,6 +7,11 @@ class AgentProfileController < ApplicationController
     @agent = Agent.find(params[:id])
     @clientmessage = Message.where(agent_id: params[:id])
     @clientreview = Review.where(agent_id: params[:id])
+
+    def average(rating)
+      calculate(:average, rating)
+    end
+
   end
 
   def edit #edit page for agent settings
@@ -22,10 +27,6 @@ class AgentProfileController < ApplicationController
     else
       redirect_to edit_agent_profile_path, notice: "error"
     end
-  end
-
-  def destroy
-    
   end
 
   private

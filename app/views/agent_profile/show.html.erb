@@ -29,8 +29,8 @@
             <% if @clientreview.length === 0 %>
               <div> No rating right now . </div>
             <% else %>
-              <% @clientreview.each do |review| %>
-                Rating:<%= review.rating %>
+              Average Rating: <% @clientreview.each do |review| %>
+                <%= review.rating%>
               <% end %><br>
             <% end %>
             <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
@@ -49,6 +49,8 @@
         </center>
       </div>
     </div>
+
+
     <div class="col-md-6">
       <div class="agenthistory">
         <div class="messagedagent">
@@ -61,10 +63,10 @@
                     <b><%= message.user.name %></b>
                       <span class="btn-group" data-toggle="buttons">
                         <label class="btn btn-sm btn-secondary">
-                          <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                          <%= link_to 'Accept', acceptclient_path, method: :post %>
                         </label>
                         <label class="btn btn-sm btn-secondary">
-                          <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                          <%= link_to 'Reject', rejectclient_path, method: :delete %>
                         </label>
                       </span>
                   </p>
@@ -92,5 +94,7 @@
         </div>
       </div>
     </div>
+
+
   </div>
 </div>

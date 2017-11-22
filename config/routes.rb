@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
     get '/', to: 'hello_world#index'
     post '/agent/:id/agentrequest', to: 'agent#create'
-    resources :clientresponse, controller: :client_response
 
+    post '/acceptclient', to: 'response#create'
+    delete '/rejectclient', to: 'response#destroy'
 
     get '/agent_login', to: 'agent_session#new'
     post '/agent_login', to: 'agent_session#create'
