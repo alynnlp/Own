@@ -9,38 +9,45 @@
   </ul>
 </nav>
 
-<div class="profileinfoedit">
-  <center>
-    <p>
-        <h4> Edit Profile </h4>
-        <h3><%= @agent.name %></h3>
-        <%= simple_form_for @agent do |f| %>
 
-        <div class="scrollbar scrollbar-morpheus-den messagedagent editpage">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="profileinfoedit">
+        <center>
           <p>
-            <%= f.label :email %><br />
-            <%= f.text_field :email, class: 'form-control'%>
+              <h4> Edit Profile </h4>
+              <h3><%= @agent.name %></h3>
+              <%= simple_form_for @agent do |f| %>
+
+              <div class="scrollbar scrollbar-morpheus-den messagedagent editpage">
+                <p>
+                  <%= f.label :email %><br />
+                  <%= f.text_field :email, class: 'form-control'%>
+                </p>
+                <p>
+                  <%= f.label :password %><br />
+                  <%= f.text_field :password, class: 'form-control' %>
+                </p>
+                <p>
+                  <%= f.label :specialty %><br />
+                  <%= f.text_field :specialty, class: 'form-control' %>
+                </p>
+                <p>
+                  <%= f.label :location %><br />
+                  <%= f.text_field :location, class: 'form-control' %>
+                </p>
+                <p>
+                  <%= f.label :bio %><br />
+                  <%= f.text_field :bio, class: 'form-control' %>
+                </p>
+              </div>
+              <p><%= f.submit "Save Changes" %></p>
+              <% end %>
           </p>
-          <p>
-            <%= f.label :password %><br />
-            <%= f.text_field :password, class: 'form-control' %>
-          </p>
-          <p>
-            <%= f.label :specialty %><br />
-            <%= f.text_field :specialty, class: 'form-control' %>
-          </p>
-          <p>
-            <%= f.label :location %><br />
-            <%= f.text_field :location, class: 'form-control' %>
-          </p>
-          <p>
-            <%= f.label :bio %><br />
-            <%= f.text_field :bio, class: 'form-control' %>
-          </p>
-        </div>
-        <p><%= f.submit "Save Changes" %></p>
-        <% end %>
-    </p>
-    <%= link_to 'Back', agent_profile_path(@agent) %>
-  </center>
+          <%= link_to 'Back', agent_profile_path(@agent) %>
+        </center>
+      </div>
+    </div>
+  </div>
 </div>
