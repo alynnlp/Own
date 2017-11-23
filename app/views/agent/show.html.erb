@@ -1,8 +1,8 @@
 <nav class="navbar sticky-top navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
+  <%= link_to "Real World", agent_index_path %>
   <ul class="nav nav-pills" role="tablist">
-    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/client_profile/1">Profile</a></li>
-    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000">Log out</a></li>
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/user_profile/1">Profile</a></li>
+    <%= link_to "Logout", user_logout_path, :method => :delete %>
   </ul>
 </nav>
 

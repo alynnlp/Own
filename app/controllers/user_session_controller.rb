@@ -1,12 +1,11 @@
 class AgentSessionController < ApplicationController
-  layout 'user_login'
 
   def new #login page
   end
 
   def create #process login information
     user = User.find_by(email: params[:session][:email].downcase)
-    
+
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       redirect_to user_profile_path(agent), :notice => "Logged in!"
