@@ -29,7 +29,7 @@ class ResponseController < ApplicationController
   private
 
   def response_params
-    params.require(:response).permit(:accept, :content, :user_id, :agent_id)
+    params.permit(:accept, :content, :user_id, :agent_id)
   end
 
 end
