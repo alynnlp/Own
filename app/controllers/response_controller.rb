@@ -1,23 +1,14 @@
 class ResponseController < ApplicationController
 
-  def index
-    @client_response_props = {
-      name: "first client"
-    }
-    @response = Response.all
+  def show
+    @clientmessage = Message.where(agent_id: params[:id])
   end
 
   def create
-    @response = Response.new(register)
-  end
-
-  def edit
-  end
-  def update
   end
 
   def destroy
-    @message = Message.find( )
+    @message = Message.find(params[:message_id])
     @message.destroy
     redirect_to agent_profile_path, :notice => "Rejected Client"
   end

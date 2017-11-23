@@ -61,13 +61,9 @@
                 <ul>
                   <p>
                     <b><%= message.user.name %></b>
-                      <span class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-sm btn-secondary">
-                          <%= link_to 'Accept', acceptclient_path, method: :post %>
-                        </label>
-                        <label class="btn btn-sm btn-secondary">
-                          <%= link_to 'Reject', rejectclient_path, method: :delete %>
-                        </label>
+                      <span>
+                        <%= link_to 'Respond', response_path, method: :get %>
+                        <%= link_to 'Reject', response_path, :confirm => "Are you sure?", method: :delete %>
                       </span>
                   </p>
                   <p><%= message.content %></p>
