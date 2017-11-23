@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
     resources :response, controller: :response
 
+    post '/response/:user_id', to: 'response#create', as: 'client_response'
+    get '/response/:user_id/new', to: 'response#new', as: 'new_client_response'
+
     get '/agent_login', to: 'agent_session#new'
     post '/agent_login', to: 'agent_session#create'
     delete '/agent_logout', to: 'agent_session#destroy'

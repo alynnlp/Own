@@ -62,7 +62,7 @@
                   <p>
                     <b><%= message.user.name %></b>
                       <span>
-                        <%= link_to 'Respond', new_response_path, method: :get %>
+                        <%= link_to 'Respond', new_client_response_path(message.user), method: :get %>
                         <%= link_to 'Reject', response_path, :confirm => "Are you sure?", method: :delete %>
                       </span>
                   </p>

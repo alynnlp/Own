@@ -13,9 +13,8 @@
         <center>
             <h3>Message to Client</h3>
             <div class="form-group">
-              <%= simple_form_for response_path, :html => { class: 'form-control'} do |f| %>
-                <%= f.label :message%><br>
-                <%= f.text_area :content %>
+              <%= simple_form_for @newResponse, :url => client_response_path(@client.id), :html => { class: 'form-control'} do |f| %>
+                <%= f.text_area :content %><br>
               <%= f.submit %>
             <% end %>
             </div>
