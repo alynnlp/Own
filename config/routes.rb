@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: 'hello_world#index'
 
-
-
     resources :response, controller: :response
-
 
     get '/agent_login', to: 'agent_session#new'
     post '/agent_login', to: 'agent_session#create'
@@ -21,9 +18,6 @@ Rails.application.routes.draw do
     post '/user_register', to:'user_register#create'
       resources :user_profile, controller: :user_profile
       resources :agent, controller: :agent
-
-
-
 
 
 end

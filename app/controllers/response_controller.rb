@@ -1,7 +1,7 @@
 class ResponseController < ApplicationController
 
   def show
-    @clientmessage = Message.where(agent_id: params[:id])
+    
   end
 
   def create

@@ -1,7 +1,8 @@
 .agentprofilepage{
   background: #778899;  /* fallback for old browsers */
   background-image: url('http://localhost:3000/road.jpg');
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .messagenotification {
   padding: 20px 0;

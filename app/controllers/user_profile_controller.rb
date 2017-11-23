@@ -1,5 +1,5 @@
-class ClientProfileController < ApplicationController
-  layout "client_profile"
+class UserProfileController < ApplicationController
+  layout "user_profile"
 
   def index
     @client_profile_props = {
@@ -12,6 +12,7 @@ class ClientProfileController < ApplicationController
     @agentmessage = Message.where(user_id: params[:id])
     @agentreview = Review.where(user_id: params[:id])
 
+    @responses = Response.where(user_id: params[:id])
   end
 
   def new

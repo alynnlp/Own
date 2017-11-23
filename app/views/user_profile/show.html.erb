@@ -1,57 +1,65 @@
 <nav class="navbar sticky-top navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost:3000/agent">Real World</a>
+  <%= link_to "Real World", agent_index_path %>
   <ul class="nav nav-pills" role="tablist">
-    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/client_profile/1">Profile <span class="badge"><%= @agentmessage.length %></span></a></li>
-    <li role="presentation" class="active"><a class="bannerbtn" href="http://localhost:3000">Log out</a></li>
+    <li role="presentation"><a class="bannerbtn" href="http://localhost:3000/user_profile/1">Profile</a></li>
+    <%= link_to "Logout", user_logout_path, :method => :delete %>
   </ul>
 </nav>
 
-<div class="userinfo">
-  <center><h2><%= @user.name %></h2>
-  <p>
-    <h5 class="title"> About Me </h5>
-    <b>Occupation:</b> <%= @user.occupation %><br>
-    <b>Age:</b> <%= @user.age %><br>
-    <b>Address:</b> <%= @user.address %><br>
-  </p>
 
-  <p>
-    <h5 class="title">Property Requirement</h5>
-    <b>Area:</b> <%= @user.location %><br>
-    <b>Budget:</b> <%= @user.budget %>,000<br>
-    <b>Size:</b> <%= @user.size %><br>
-  </p>
-  <%= link_to 'Edit', edit_client_profile_path(@user) %>
-  </center>
-</div>
 
-<div class="history">
-  <div class="messagedagent">
-    <p><center>Messaged Agent</center></p>
-    <div class="scrollbar scrollbar-morpheus-den messagedagent">
-      <div class="force-overflow">
-        <% @agentmessage.each do |message| %>
-          <ul>
-            <p><%= message.agent.name %>
-            <p><%= message.content %></p>
-          </ul>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="userinfo">
+        <center><h2><%= @user.name %></h2>
+        <p>
+          <h5 class="title"> About Me </h5>
+          <b>Occupation:</b> <%= @user.occupation %><br>
+          <b>Age:</b> <%= @user.age %><br>
+          <b>Address:</b> <%= @user.address %><br>
+        </p>
+
+        <p>
+          <h5 class="title">Property Requirement</h5>
+          <b>Area:</b> <%= @user.location %><br>
+          <b>Budget:</b> <%= @user.budget %>,000<br>
+          <b>Size:</b> <%= @user.size %><br>
+        </p>
+        <%= link_to 'Edit', edit_user_profile_path(@user) %>
+        </center>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="history">
+        <div class="acceptedrequest">
+          <p><center><h5>Accepted Request</h5></center></p>
+          <div class="scrollbar scrollbar-morpheus-den messagedagent">
+            <div class="force-overflow">
+              <% @responses.each do |response| %>
+                <ul>
+                  <p><b><%= response.agent.name %></b><br>
+                  <p><%= response.content %></p>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="messagedagent">
+          <p><center><h5>Messaged Agent</h5></center></p>
+          <div class="scrollbar scrollbar-morpheus-den messagedagent">
+            <div class="force-overflow">
+              <% @agentmessage.each do |message| %>
+                <ul>
+                  <p><b><%= message.agent.name %></b></p>
+                  <p><%= message.content %></p>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="reviewedagent">
-    <p><center>Reviewed Agent</center></p>
-    <div class="scrollbar scrollbar-morpheus-den messagedagent">
-      <div class="force-overflow">
-        <% @agentreview.each do |review| %>
-          <ul>
-            <p><%= review.agent.name %><br>
-            <p>
-              <b>Rating: </b><%= review.rating %><br>
-              <%= review.comment %>
-            </p>
-          </ul>
-        <% end %>
-      </div>
-    </div>
 </div>

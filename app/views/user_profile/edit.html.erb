@@ -6,49 +6,56 @@
   </ul>
 </nav>
 
-<div class="profileinfoedit">
-  <center>
-    <p>
-        <h4> Edit Profile </h4>
-        <h3><%= @user.name %></h3>
-        <%= form_for @user, url: client_profile_path(@user) do |f| %>
-        <div class="scrollbar scrollbar-morpheus-den messagedagent editpage">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="profileinfoedit">
+        <center>
           <p>
-            <%= f.label :email %><br />
-            <%= f.text_field :email %>
+              <h2> Edit Profile </h2>
+              <h4><%= @user.name %></h4>
+              <hr>
+              <%= simple_form_for @user, url: user_profile_path(@user) do |f| %>
+              <div class="scrollbar scrollbar-morpheus-den usereditpage">
+                <p>
+                  <%= f.label :email %><br />
+                  <%= f.text_field :email %>
+                </p>
+                <p>
+                  <%= f.label :password %><br />
+                  <%= f.text_field :password %>
+                </p>
+                <p>
+                  <%= f.label :location %><br />
+                  <%= f.text_field :location %>
+                </p>
+                <p>
+                  <%= f.label :budget %><br />
+                  <%= f.text_field :budget %>
+                </p>
+                <p>
+                  <%= f.label :size %><br />
+                  <%= f.text_field :size %>
+                </p>
+                <p>
+                  <%= f.label :age %><br />
+                  <%= f.text_field :age %>
+                </p>
+                <p>
+                  <%= f.label :address %><br />
+                  <%= f.text_field :address %>
+                </p>
+                <p>
+                  <%= f.label :occupation %><br />
+                  <%= f.text_field :occupation %>
+                </p>
+              </div>
+              <p><%= f.submit "Save Changes" %></p>
+              <% end %>
           </p>
-          <p>
-            <%= f.label :password %><br />
-            <%= f.text_field :password %>
-          </p>
-          <p>
-            <%= f.label :location %><br />
-            <%= f.text_field :location %>
-          </p>
-          <p>
-            <%= f.label :budget %><br />
-            <%= f.text_field :budget %>
-          </p>
-          <p>
-            <%= f.label :size %><br />
-            <%= f.text_field :size %>
-          </p>
-          <p>
-            <%= f.label :age %><br />
-            <%= f.text_field :age %>
-          </p>
-          <p>
-            <%= f.label :address %><br />
-            <%= f.text_field :address %>
-          </p>
-          <p>
-            <%= f.label :occupation %><br />
-            <%= f.text_field :occupation %>
-          </p>
-        </div>
-        <p><%= f.submit "Save Changes" %></p>
-        <% end %>
-    </p>
-    <%= link_to 'Back', client_profile_path(@user) %>
-  </center>
+          <%= link_to 'Back', user_profile_path(@user) %>
+        </center>
+      </div>
+    </div>
+  </div>
 </div>
