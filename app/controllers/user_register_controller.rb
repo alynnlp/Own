@@ -1,5 +1,5 @@
 class UserRegisterController < ApplicationController
-  layout 'hello_world'
+  layout 'user_login'
 
   def new #agent register page
     @newUser = User.new

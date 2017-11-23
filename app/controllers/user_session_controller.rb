@@ -1,5 +1,5 @@
 class UserSessionController < ApplicationController
-  layout 'hello_world'
+  layout 'user_login'
 
   def new #login page
   end

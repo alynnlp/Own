@@ -12,12 +12,13 @@
       <div class="respondToClient">
         <center>
             <h3>Message to Client</h3>
-            <div class="form-group">
-              <%= simple_form_for @newResponse, :url => client_response_path(@client.id), :html => { class: 'form-control'} do |f| %>
+            <div class="messageToClient">
+              <%= simple_form_for @newResponse, :url => client_response_path(@client.id) do |f| %>
                 <%= f.text_area :content %><br>
               <%= f.submit %>
             <% end %>
-            </div>
+          </div>
+            <%= link_to "Back", agent_profile_path(@agent) %>
         </center>
       </div>
     </div>

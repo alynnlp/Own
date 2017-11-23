@@ -45,12 +45,19 @@
 .overlay {
     position:absolute;
     top:40%;
-    left:40%;
+
     z-index:1;
-    color: #F9EBEA ;
+    color: black ;
     letter-spacing: 2px;
-    font-size: 45px;
+    font-size: 50px;
     font-family: 'Reenie Beanie', cursive;
+}
+
+.homepagetitle {
+  background-color: white;
+  width: 100vw;
+  opacity: 0.8;
+
 }
 
 button.login, button.register {
@@ -103,9 +110,6 @@ p.banner {
   border-bottom: 1px solid grey;
 }
 
-.loginoption {
-
-}
 
 .userloginclick {
   font-size: 16px;
@@ -118,12 +122,12 @@ p.banner {
 }
 
 .agentloginclick {
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
-  background: white;
+  background: MEDIUMTURQUOISE;
   border-radius: 2px;
   padding: 0 20px;
-  opacity: 0.95;
+  opacity: 1;
   color: black;
 }
 
@@ -132,4 +136,8 @@ a.agentlogin:hover {
   opacity: 1;
   color: black;
   background-color: white;
+}
+
+.userloginpage {
+  background-image: url('http://localhost:3000/login.jpg')
 }
