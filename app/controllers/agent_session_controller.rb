@@ -24,6 +24,4 @@ class AgentSessionController < ApplicationController
     redirect_to '/', :notice => "Logged out"
   end
 
-  private
-
 end

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get '/', to: 'hello_world#index'
+  get '/', to: 'hello_world#index', as: 'root'
 
     resources :response, controller: :response
-
     post '/response/:user_id', to: 'response#create', as: 'client_response'
     get '/response/:user_id/new', to: 'response#new', as: 'new_client_response'
+
+    resources :message, controller: :message
+    post '/message/:agent_id', to: 'message#create', as: 'agent_message'
 
     get '/agent_login', to: 'agent_session#new'
     post '/agent_login', to: 'agent_session#create'

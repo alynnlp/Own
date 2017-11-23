@@ -1,4 +1,5 @@
-class AgentSessionController < ApplicationController
+class UserSessionController < ApplicationController
+  layout 'hello_world'
 
   def new #login page
   end

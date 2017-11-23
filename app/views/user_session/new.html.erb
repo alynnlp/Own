@@ -1,0 +1,18 @@
+<header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:3000">Real World</a>
+  </nav>
+</header>
+
+<div class="loginpage agentlogin">
+  <center>
+    <h3>LOGIN</h3>
+    <hr />
+    <form class="loginform" onSubmit={this.props.checkExistUser}>
+      <p>email: <input name="email"></input></p>
+      <p>password: <input name="password"></input></p>
+      <p><button type="submit">Login</button></p>
+    </form>
+    <%= link_to 'Back', root_path %>
+  </center>
+</div>
