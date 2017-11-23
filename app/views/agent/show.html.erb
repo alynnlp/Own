@@ -6,30 +6,36 @@
   </ul>
 </nav>
 
-<div class="listofagents">
-  <img class="bigdisplay" src="<%= @agent.img %>" alt="Profile Picture"></img>
-  <p>
-    <span class="agentname"><%= @agent.name %></span>
-    <b>Rating:</b>
-  </p>
-  <div class="scrollbar scrollbar-morpheus-den agentinfo">
-    <div class="force-overflow">
-      <p>
-        <b>Specialized Location:</b> <%= @agent.location %><br>
-        <b>Specialty:</b> <%= @agent.specialty %><br>
-      </p>
-      <p><b>Biography:</b><br>
-        <%= @agent.bio %>
-      </p>
-    </div>
-  </div>
-  <div class="request">
-    <h5 class="requesttitle">Request Agent</h5>
-      <%= simple_form_for @newMessage, :url => agent_message(@agent.id), :html => { class: 'form-control'}  do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="agentprofileinfo">
+        <img class="bigdisplay" src="<%= @agent.img %>" alt="Profile Picture"></img>
         <p>
-          <%= f.text_area :content %><br>
+          <span class="agentname"><%= @agent.name %></span>
+          <b>Rating:</b>
         </p>
-        <%= f.submit %>
-      <% end %>
+        <div class="scrollbar scrollbar-morpheus-den agentinfo">
+          <div class="force-overflow">
+            <p>
+              <b>Specialized Location:</b> <%= @agent.location %><br>
+              <b>Specialty:</b> <%= @agent.specialty %><br>
+            </p>
+            <p><b>Biography:</b><br>
+              <%= @agent.bio %>
+            </p>
+          </div>
+        </div>
+        <div class="request">
+          <h5 class="requesttitle">Request Agent</h5>
+          <%= simple_form_for @newMessage, :url => agent_message_path(@agent)  do |f| %>
+            <p class="agentrequesttext">
+              <%= f.text_area :content %><br>
+            </p>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

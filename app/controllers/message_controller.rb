@@ -6,8 +6,9 @@ class ResponseController < ApplicationController
   end
 
   def create
-    @newMessage = Message.new(message_params)
+    @agent = Agent.find(params[:id])
 
+    @newMessage = Message.new(message_params)
     @newMessage.agent_id = params[:id]
     @newMessage.user_id = session[:user_id]
     @newMessage.accept = 'true'

@@ -5,9 +5,8 @@ class AgentController < ApplicationController
     @agents = Agent.all
     @agent_props = Agent.name
     @agentmessage = Message.where(user_id: params[:id])
-
-
   end
+
   def show #display ONE agent for users
     @agent = Agent.find(params[:id])
     @agentmessage = Message.where(user_id: params[:id])
@@ -16,7 +15,7 @@ class AgentController < ApplicationController
     # @agentspecialty = Agent.find(params[:id]).specialty
     # @agentlocation = Agent.find(params[:id]).location
     @agentreview = Review.where(agent_id: params[:id])
-
+    @newMessage = Message.newwefwef
   end
 
   def new
