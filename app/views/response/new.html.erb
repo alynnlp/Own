@@ -1,0 +1,26 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="">Real World</a>
+  <ul class="nav nav-pills" role="tablist">
+     <!-- link_to "Profile", agent_profile_path  -->
+    <%= link_to "Logout", agent_logout_path, :method => :delete %>
+  </ul>
+</nav>
+
+<div class="container agentprofileinfo">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="respondToClient">
+        <center>
+            <h3>Message to Client</h3>
+            <div class="form-group">
+              <%= simple_form_for response_path, :html => { class: 'form-control'} do |f| %>
+                <%= f.label :message%><br>
+                <%= f.text_area :content %>
+              <%= f.submit %>
+            <% end %>
+            </div>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>

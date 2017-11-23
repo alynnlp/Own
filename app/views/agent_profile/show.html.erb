@@ -54,7 +54,7 @@
     <div class="col-md-6">
       <div class="agenthistory">
         <div class="messagedagent">
-          <p><center>Clients Messages</center></p>
+          <p><center><h5>Clients Messages</h5></center></p>
           <div class="scrollbar scrollbar-morpheus-den messagedagent">
             <div class="force-overflow">
               <% @clientmessage.each do |message| %>
@@ -62,7 +62,7 @@
                   <p>
                     <b><%= message.user.name %></b>
                       <span>
-                        <%= link_to 'Respond', response_path, method: :get %>
+                        <%= link_to 'Respond', new_response_path, method: :get %>
                         <%= link_to 'Reject', response_path, :confirm => "Are you sure?", method: :delete %>
                       </span>
                   </p>
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="reviewedagent">
-          <p><center>Clients Reviews</center></p>
+          <p><center><h5>Clients Reviews</h5></center></p>
           <div class="scrollbar scrollbar-morpheus-den messagedagent">
             <div class="force-overflow">
               <% @clientreview.each do |review| %>

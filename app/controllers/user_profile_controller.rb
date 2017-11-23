@@ -12,7 +12,7 @@ class UserProfileController < ApplicationController
     @agentmessage = Message.where(user_id: params[:id])
     @agentreview = Review.where(user_id: params[:id])
 
-    @responses = Response.where(user_id: params[:id])
+    @responses = Response.where(agent_id: params[:id])
   end
 
   def new
