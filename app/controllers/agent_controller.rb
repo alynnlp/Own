@@ -15,7 +15,7 @@ class AgentController < ApplicationController
     # @agentspecialty = Agent.find(params[:id]).specialty
     # @agentlocation = Agent.find(params[:id]).location
     @agentreview = Review.where(agent_id: params[:id])
-    @newMessage = Message.newwefwef
+    @newMessage = Message.new
   end
 
   def new

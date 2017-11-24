@@ -28,7 +28,7 @@
         </div>
         <div class="request">
           <h5 class="requesttitle">Request Agent</h5>
-          <%= simple_form_for @newMessage, :url => agent_message_path(@agent)  do |f| %>
+          <%= simple_form_for @newMessage, :url => agent_message_path(@agent.id)  do |f| %>
             <p class="agentrequesttext">
               <%= f.text_area :content %><br>
             </p>
