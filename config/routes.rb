@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     delete '/agent_logout', to: 'agent_session#destroy'
     get '/agent_register', to:'agent_register#new'
     post '/agent_register', to:'agent_register#create'
-
       resources :agent_profile, controller: :agent_profile
 
     get '/user_login', to: 'user_session#new'

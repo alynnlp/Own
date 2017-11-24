@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost:3000">Real World</a>
+  <%= link_to "Real World", agent_profile_index_path %>
   <ul class="nav nav-pills" role="tablist">
     <%= link_to "Profile", agent_profile_path %>
     <%= link_to "Logout", agent_logout_path, :method => :delete %>
@@ -55,7 +55,7 @@
       <div class="agenthistory">
         <div class="messagedagent">
           <p><center><h5>Clients Messages</h5></center></p>
-          <div class="scrollbar scrollbar-morpheus-den messagedagent">
+          <div class="scrollbar scrollbar-morpheus-den clientresponse">
             <div class="force-overflow">
               <% @clientmessage.each do |message| %>
                 <ul>

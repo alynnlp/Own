@@ -1,6 +1,8 @@
 class AgentProfileController < ApplicationController
   layout 'agent_profile'
   def index
+    @users = User.all
+
   end
 
   def show #agentprofile

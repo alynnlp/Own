@@ -1,0 +1,44 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <%= link_to "Real World", agent_profile_index_path %>
+  <ul class="nav nav-pills" role="tablist">
+    <%= link_to "Logout", agent_logout_path, :method => :delete %>
+  </ul>
+</nav>
+
+
+<div class="sorting">
+  <div class="btn-group btn-group-justified active" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Location</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Budget</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">Size</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 agentprofileinfo">
+        <center><h4>H O M E B U Y E R S</h4></center>
+        <div class="scrollbar scrollbar-morpheus-den">
+          <div class="force-overflow">
+            <p>
+              <% @users.each do |user| %>
+                <ul>
+                  <p class="listname">
+                    <h4><%= user.name %> </h4>
+                    Occupation: <%= user.occupation %>
+                    Age: <%= user.age %>
+                  </p>
+                </ul>
+              <% end %>
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

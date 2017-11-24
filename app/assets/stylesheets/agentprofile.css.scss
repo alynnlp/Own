@@ -62,8 +62,8 @@
   margin-top: 40px;
 }
 
-div.scrollbar.scrollbar-morpheus-den.messagedagent {
-  height: 500em;       /* Just for the demo          */
+div.scrollbar.scrollbar-morpheus-den.clientresponse {
+  height: 230px;       /* Just for the demo          */
   overflow-y: auto;    /* Trigger vertical scroll    */
   overflow-x: hidden;  /* Hide the horizontal scroll */
 }
@@ -81,17 +81,4 @@ div.scrollbar.scrollbar-morpheus-den.editpage {
 textarea {
   width: 70%;
   height: 100px;
-}
-
-a:link {
-  color: #ffffff;
-}
-a:visited {
-  color: #FFFFFF;
-}
-a:hover {
-  color: #FFFFFF;
-}
-a:active {
-  color: #FFFFFF;
 }
