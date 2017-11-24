@@ -11,9 +11,9 @@
     <% if @responses.length === 0 %>
       <div> Sorry ! There is no message for you at the moment . </div>
     <% elsif @responses.length === 1 %>
-      <div>Congratulations! You have <span class="badge"><%= @responses.length %></span> accepted request!</div>
+      <div>Congratulations! You have <span class="badge"><%= @responses.length %></span> responded request!</div>
     <% else %>
-        <div>Congratulations! You have <span class="badge"><%= @responses.length %></span> accepted requests!</div>
+        <div>Congratulations! You have <span class="badge"><%= @responses.length %></span> responded requests!</div>
     <% end %>
   </center>
 </div>
@@ -52,7 +52,7 @@
                   <p><b><%= response.agent.name %></b>
                     <span>
                       <%= link_to 'Accept', response, method: :put, :style => 'color: #FFFFFF;', class: "btn btn-success"%>
-                      <%= link_to 'Delete', response, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
+                      <%= link_to 'Reject', response, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
                     </span>
                   <p><%= response.content %></p>
                 </ul>

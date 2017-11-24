@@ -33,6 +33,16 @@
                 <%= review.rating%>
               <% end %><br>
             <% end %>
+
+            <p>
+              Currently working with:
+                <% resp = Response.where(agent: @agent).first %>
+                <% if resp && resp.accept != nil %>
+                    <%= resp.user.name %>
+                <% else %>
+                  0 client . 
+                <% end %>
+            </p>
             <span><img class="agentdisplay"src= '<%= @agent.img %>' alt="pic"></img> </span>
           </p>
           <p>
@@ -63,7 +73,7 @@
                     <b><%= message.user.name %></b>
                       <span>
                         <%= link_to 'Respond', new_client_response_path(message.user), method: :get, :style => 'color: #FFFFFF;', class: "btn btn-success" %>
-                        <%= link_to 'Reject', message, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
+                        <%= link_to 'Delete', message, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
                       </span>
                   </p>
                   <p><%= message.content %></p>
