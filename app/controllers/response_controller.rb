@@ -23,6 +23,13 @@ class ResponseController < ApplicationController
     end
   end
 
+  def destroy
+    @response = Response.find(params[:id])
+    @response.destroy
+    current_user = params[:id]
+    redirect_to user_profile_path(current_user), :notice => "Message deleted"
+  end
+
   private
 
   def response_params

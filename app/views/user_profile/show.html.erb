@@ -50,6 +50,9 @@
               <% @responses.each do |response| %>
                 <ul>
                   <p><b><%= response.agent.name %></b><br>
+                    <span>
+                      <%= link_to 'Delete', response, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
+                    </span>
                   <p><%= response.content %></p>
                 </ul>
               <% end %>
