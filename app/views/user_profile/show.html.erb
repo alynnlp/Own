@@ -49,8 +49,9 @@
             <div class="force-overflow">
               <% @responses.each do |response| %>
                 <ul>
-                  <p><b><%= response.agent.name %></b><br>
+                  <p><b><%= response.agent.name %></b>
                     <span>
+                      <%= link_to 'Accept', response, method: :put, :style => 'color: #FFFFFF;', class: "btn btn-success"%>
                       <%= link_to 'Delete', response, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
                     </span>
                   <p><%= response.content %></p>
@@ -60,7 +61,7 @@
           </div>
         </div>
         <div class="messagedagent">
-          <p><center><h5>Messaged Agent</h5></center></p>
+          <p><center><h5>Unresponded Request</h5></center></p>
           <div class="scrollbar scrollbar-morpheus-den messagedagent">
             <div class="force-overflow">
               <% @agentmessage.each do |message| %>

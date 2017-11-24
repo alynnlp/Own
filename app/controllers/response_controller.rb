@@ -23,11 +23,20 @@ class ResponseController < ApplicationController
     end
   end
 
+  def update
+    @acceptagent = Response.find(params[:id])
+    if @acceptagent.update_attributes(:accept => 'True')
+      @acceptagent.save
+      redirect_to user_profile_path(:id => 1)
+    else
+      redirect_to user_profile_path(params[:id])
+    end
+  end
+
   def destroy
     @response = Response.find(params[:id])
     @response.destroy
-    current_user = params[:id]
-    redirect_to user_profile_path(current_user), :notice => "Message deleted"
+    redirect_to user_profile_path(:id => 1), :notice => "Message deleted"
   end
 
   private

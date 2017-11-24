@@ -62,8 +62,8 @@
                   <p>
                     <b><%= message.user.name %></b>
                       <span>
-                        <%= link_to 'Respond', new_client_response_path(message.user), method: :get, :style => 'color: #FFFFFF;', class: "btn btn-primary" %>
-                        <%= link_to 'Reject', message, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-primary"%>
+                        <%= link_to 'Respond', new_client_response_path(message.user), method: :get, :style => 'color: #FFFFFF;', class: "btn btn-success" %>
+                        <%= link_to 'Reject', message, method: :delete, :style => 'color: #FFFFFF;', class: "btn btn-danger"%>
                       </span>
                   </p>
                   <p><%= message.content %></p>

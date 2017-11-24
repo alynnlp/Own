@@ -37,10 +37,6 @@ class UserProfileController < ApplicationController
     end
   end
 
-  def destroy
-
-  end
-
   private
     def register_params
       params.permit(:name, :email, :password)
